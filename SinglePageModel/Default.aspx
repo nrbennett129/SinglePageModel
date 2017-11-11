@@ -1,10 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SinglePageModel.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SinglePageModel.Default" Trace="true" %>
 <%@ Import Namespace="AutoLotDAL.Models" %>
 <%@ Import Namespace="AutoLotDAL.Repos" %>
 
 <script runat="server">
     public IEnumerable<Inventory> GetData()
     {
+        Trace.Write("Default.aspx", "Getting Data");
         return new InventoryRepo().GetAll();
     }
 </script>
@@ -12,7 +13,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Single Page Model</title>
 </head>
 <body>
     <form id="form1" runat="server">
